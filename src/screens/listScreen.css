@@ -1,0 +1,123 @@
+.ListScreen {
+  background-color: rgb(243, 239, 239);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+*:hover,
+*:focus,
+*:active
+ {
+  outline: none;
+  box-shadow: none !important;
+  -webkit-appearance: none;
+}
+
+.selectContainer{
+  height: 10%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  background:yellow;
+  min-height: 46px;
+}
+
+.form-select{
+  width: 40%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.toursContainer{
+  display: flex;
+  flex-direction: column;
+  margin-top: 10%;
+  margin-bottom: 5%;
+}
+
+.tour{
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width:100%;
+  height: 100%;
+  max-height:250px;
+  min-height:250px;
+  min-width:800px;
+  max-width: 800px;
+  color: grey;
+  background: white;
+  margin: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.tour img {
+  display: flex;
+  flex-direction: row;
+  object-fit: cover;
+  width:100%;
+  height: 100%;
+  max-width:250px;
+  min-width:250px;
+  min-height: 250px;
+  max-height: 250px;
+}
+
+.tourInner{
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+
+.tourInnerTop{
+  display: flex;
+  flex-direction: column;
+}
+
+.tourName{
+  font-size: xx-large;
+  font-weight: 900;
+}
+
+.tourCity{
+  font-size: medium;
+  font-weight: bold;
+  margin-left:3%;
+}
+
+.tourInnerBottom{
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  position:absolute;
+  bottom:0;
+  margin: 5px;
+}
+
+.tourInnerBottom > div{
+  text-align: center;
+  font-size: medium;
+  margin: 1.5%;
+}
+
+.tourPrice{
+  font-size: large;
+  font-weight: 700;
+  color: green;
+}
+
+.separator{
+  border-left: 2px solid gray;
+  height:auto;
+}
