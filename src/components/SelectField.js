@@ -1,10 +1,11 @@
-export default function SelectField(props){
+export default function SelectField(countries){
     return(
-    <select className="form-select" onChange={props.onChange}>
+    <select className="form-select" onChange={countries.onChange}>
       <option value="DEFAULT" selected disabled hidden>Choose here...</option>
-      {
-        props.value.map( (x) => 
-      <option key={x.id} value={x.id}>{x.name}</option> )
-    }</select>
+        {
+          countries.value.map( (country) => 
+          <option key={country.id} value={country.id}>{country.name}</option> 
+        )}
+      </select>
     );
   }

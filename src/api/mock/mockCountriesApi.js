@@ -1,20 +1,20 @@
-import {countriesData, toursData} from './countriesData.js'
+import {countries, tours} from './countriesData.js'
 
 export const getCountries = () =>
   new Promise((resolve, reject) => {
-    if (!countriesData) {
+    if (!countries) {
       return setTimeout(
         () => reject(new Error('Countries data not found')),
         250
       );
     }
  
-    setTimeout(() => resolve(Object.values(countriesData)), 250);
+    setTimeout(() => resolve(Object.values(countries)), 250);
   });
 
 export const getCountry = (id) =>
   new Promise((resolve, reject) => {
-    const country = countriesData[id];
+    const country = countries[id];
  
     if (!country) {
       return setTimeout(
@@ -23,19 +23,18 @@ export const getCountry = (id) =>
       );
     }
  
-    setTimeout(() => resolve(countriesData[id]), 250);
+    setTimeout(() => resolve(countries[id]), 250);
   });
 
 export const getToursByCountryId = (id) =>
   new Promise((resolve, reject) => {
-    const tours = toursData.filter(tour => tour.countryId === parseInt(id))
- 
-    if (!tours) {
+    const toursById = tours.filter(tour => tour.countryId === parseInt(id))
+    if (!toursById) {
       return setTimeout(
         () => reject(new Error('Tours not found')),
         250
       );
     }
  
-    setTimeout(() => resolve(Object.values(tours)), 250);
+    setTimeout(() => resolve(Object.values(toursById)), 250);
   });

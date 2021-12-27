@@ -1,3 +1,5 @@
-export default function ToursDisplay(props){
-    return <div className="d-flex justify-content-center toursContainer">{props.value}</div>
-  }
+import TourCard from "./TourCard"
+
+export default function ToursDisplay(tours){
+  return tours.value.map(tour => TourCard(tour))
+}

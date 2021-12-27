@@ -1,4 +1,4 @@
-import {grandBlue, sandBeach, romaHost, zanaduHotel, miklagordHotel, ufukPension} from "../assets/img/index.js"
+import {grandBlue, sandBeach, romaHost, zanaduHotel, miklagordHotel, ufukPension} from "../../assets/img/index.js"
 
 export let countriesData = [ 
     {id: 0, name: 'Egypt', code: 'EG'}, 
