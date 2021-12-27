@@ -1,7 +1,8 @@
 import React from 'react';
-import {getCountries, getCountry} from './api/mockCountriesApi'
+import {getCountries, getToursByCountryId} from './api/mockCountriesApi'
 import SelectField from './components/SelectField.js'
-import InputDisplay from './components/InputDisplay.js'
+import ToursDisplay from './components/ToursDisplay.js'
+import TourOptionFormat from './components/TourOptionFormat.js'
 import './App.css';
 
 class App extends React.Component {
@@ -9,36 +10,20 @@ class App extends React.Component {
     super(props)
     this.state = {
       countries: [],
-      displayValue: '',
+      displayValue: [],
     }
     this.handleSelectChange = this.handleSelectChange.bind(this)
   }
 
-  doGetCountries = async () => {
-    try {
-      return await getCountries();
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  doGetCountry = async (id) => {
-    try {
-      return await getCountry(id);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   componentDidMount(){
-    this.doGetCountries()
+    getCountries()
     .then(result =>this.setState({countries: result}))
   }
 
   handleSelectChange(event){
-    this.doGetCountry(event.target.value)
-    .then(({id, ...result}) => result)
-    .then(result => this.setState({displayValue: JSON.stringify(result)}))
+    getToursByCountryId(event.target.value)
+    .then(result => TourOptionFormat(result))
+    .then(result => this.setState({displayValue: result}))
     event.preventDefault()
   }
 
@@ -46,13 +31,13 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <header className="App-header">
+        <div class="selectContainer">
           <SelectField 
             value = {this.state.countries}
             onChange = {this.handleSelectChange} 
           />
-          <InputDisplay value = {this.state.displayValue} />
-        </header>
+        </div>
+        <ToursDisplay value = {this.state.displayValue} />
       </div>
     );
   }

@@ -1,0 +1,6 @@
+export {default as grandBlue} from "./Grand_Blue_Saint Maria_Aqua_Park.jpg"
+export {default as sandBeach} from "./Sand_Beach_Hotel.jpg"
+export {default as romaHost} from "./Roma_Host_Way_Aqua_Park.jpg"
+export {default as zanaduHotel} from "./The_Zanadu_Hotel.jpg"
+export {default as miklagordHotel} from "./Miklagord_Hotel.jpg"
+export {default as ufukPension} from "./Ufuk_Pension.jpg"
