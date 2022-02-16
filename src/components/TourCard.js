@@ -8,7 +8,7 @@ export default function TourCard(tour){
                     <div className = 'tourCity'>{tour.city}</div>
                 </div>
                 <div className = 'tourInnerBottom'>
-                    <div className = 'tourStayTime'>{tour.stayTime}</div>
+                    <div className = 'tourStayTime'>{tour.stayTime + " days & 1 night"}</div>
                     <div className = 'separator' />
                     <div className = 'tourTourists'>{tour.touristsAdult + " adult(s) & " + tour.touristsKid + " kid(s)" }</div>
                     <div className = 'separator' />

@@ -1,5 +1,6 @@
 import express from 'express';
 import {countries, tours} from '../countriesData.js'
+import toursFilter from "../controllers/toursFilter.js"
 
 const router = express.Router();
 
@@ -18,11 +19,17 @@ router.get("/:id", (req, res) =>{
 })
 
 router.get("/:id/tours", (req, res) =>{
-    const id = req.params.id
+    const {id} = req.params
+    const filters = req.query
     const country = countries[id]
     if(country){
         const toursByCountryId = tours.filter(tour => tour.countryId === parseInt(id))
-        res.send(toursByCountryId)
+        if(Object.keys(filters).length != 0){
+            const filteredToursByCountryId = toursFilter(toursByCountryId, filters)
+            res.send(filteredToursByCountryId)
+        }else{
+            res.send(toursByCountryId)
+        }
     }else{
         res.status(404).send("Country Not Found.")
     }

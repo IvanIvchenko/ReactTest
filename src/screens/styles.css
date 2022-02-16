@@ -18,6 +18,17 @@
   -webkit-appearance: none;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 .selectContainer{
   height: 10%;
   width: 100%;
@@ -120,4 +131,22 @@
 .separator{
   border-left: 2px solid gray;
   height:auto;
+}
+
+.toursWrapper{
+  display: flex;
+}
+
+
+.filtersComponent{
+  margin-top: 11%;
+  margin-bottom: 35%;
+  font-size: medium;
+  color: grey;
+  position: relative;
+  border: solid;
+}
+
+.filtersComponent > input[type='checkbox']{
+  display:none;
 }
