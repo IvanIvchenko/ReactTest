@@ -1,4 +1,4 @@
-.App {
+.ListScreen {
   background-color: rgb(243, 239, 239);
   min-height: 100vh;
   display: flex;
@@ -16,6 +16,17 @@
   outline: none;
   box-shadow: none !important;
   -webkit-appearance: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 .selectContainer{
@@ -120,4 +131,22 @@
 .separator{
   border-left: 2px solid gray;
   height:auto;
+}
+
+.toursWrapper{
+  display: flex;
+}
+
+
+.filtersComponent{
+  margin-top: 11%;
+  margin-bottom: 35%;
+  font-size: medium;
+  color: grey;
+  position: relative;
+  border: solid;
+}
+
+.filtersComponent > input[type='checkbox']{
+  display:none;
 }

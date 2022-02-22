@@ -1,0 +1,4 @@
+export const selectedCountryConstants = {
+    SELECTED_COUNTRY:"SELECTED_COUNTRY",
+    REMOVE_SELECTED_COUNTRY:"REMOVE_SELECTED_COUNTRY"
+}
